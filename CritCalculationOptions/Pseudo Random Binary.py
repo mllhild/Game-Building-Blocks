@@ -2,6 +2,13 @@
 # 1. Clumping 10100100000000100101111
 # 2. Patterns 11001100011100001111, 1100110011001100
 
+# Rules to counter it
+# 1. If the newest value will produce a run of 4 or more, then there is a 75% chance
+# to flip the newest value. This doesn’t make runs of 4 or more impossible, but progressively much less likely (the probability of a run of 4 occurring goes from 1/8
+# to 1/128). Runs of a particular length can be prohibited altogether, but this will more negatively affect the integrity of the randomness.
+# 2. If the newest value causes a repeating pattern of four values, like 11001100, then flip the last value (so that the sequence becomes 11001101).
+# 3. If the newest value causes a repeating pattern of 111000 or 000111, then flip the last value.
+
 import random
 
 def generate_initial_sequence(length):
