@@ -1,0 +1,12 @@
+Make root node the current node
+• While current node exists,
+  • Run current node’s precondition
+  • If precondition returns true,
+    − Add node to execute list
+    - If child node exists
+      − Make node’s child current node
+    - ElseIf make node’s sibling current node
+    - Else go up one level and check for siblings node
+  • Else,
+    − Make node’s sibling current node
+• Run all behaviors on the execute list
