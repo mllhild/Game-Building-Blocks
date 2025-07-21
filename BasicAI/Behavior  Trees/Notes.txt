@@ -1,7 +1,7 @@
 Make root node the current node
 • While current node exists,
   • Run current node’s precondition
-  • If precondition returns true,
+  • If precondition returns true, (default selector)
     − Add node to execute list
     - If child node exists
       − Make node’s child current node
@@ -10,3 +10,9 @@ Make root node the current node
   • Else,
     − Make node’s sibling current node
 • Run all behaviors on the execute list
+
+
+Diffenret selectors are possible. Ex:
+- run all child nodes
+- select one child randomly
+- utility system type selctor
