@@ -1,0 +1,18 @@
+Utility function
+- calculate values of actions
+- compare results and choose the one with highest value
+Ex:
+Desire to take cover = C1 * health missing - C2 * BulletsInMagazine + C3 * HealingPacks Remaining
+
+- Values of the constants can be dynamically tweaked.
+- ideally all variables (ex: health missing) are normalized to [-1,1] or [0,1]
+- final values could also be scaled again to a [0,1] range for more readable compares
+- the more options your npc has, the better this system is compared to the others
+- very hard to tune and will have unexpected emerging behavior
+
+- Alternative to selecting the highest, is to make a weighted random selection, 
+so the best are the most likely descisions, but not always the choosen ones. Prevents mechanical behavior.
+
+Books:
+An Introduction to Utility Theory
+Behavioral Mathematics for Game AI
