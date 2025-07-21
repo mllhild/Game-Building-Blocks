@@ -1,0 +1,27 @@
+Uses a backwards recursive function to make an action plan.
+- Hard to control and creates lose cannons
+- bad for cienematic shots
+- creates emergent behavior
+
+- Derived from STRIPS
+- Used in games like F.E.A.R., Deus Ex: H.R., Just Cause 2
+
+Elements:
+- List(Outstanding Facts)
+
+Backwards chaining search:
+Add the goal to the outstanding facts list
+• For each outstanding fact
+  • Remove this outstanding fact
+  • Find the actions that have the fact as an effect
+  • If the precondition of the action is satisfied,
+    − Add the action to the plan,
+    − Work backwards to add the now-supported action chain to the plan
+  • Otherwise,
+    − Add the preconditions of the action as outstanding facts
+
+Ex:
+Target.Dead -> HP reduce -> Shoot Target -> 
+-> Have Gun -> Draw Gun -> Have Ammo Reload
+-> See Target -> Find Target -> Move to Vantage Point -> Able to move -> Heal Leg
+
