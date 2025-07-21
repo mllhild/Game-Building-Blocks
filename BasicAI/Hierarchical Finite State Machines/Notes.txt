@@ -1,1 +1,3 @@
-
+Example in
+Section 5.3.9 in the book Artificial Intelligence for Games by Ian
+Millington and John Funge [Millington and Funge 09].
