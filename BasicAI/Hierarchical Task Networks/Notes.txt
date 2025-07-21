@@ -1,0 +1,19 @@
+- forward Planner
+- starts with World State and one root task (the problem)
+- root task is decomposed into smaller and smaller tasks
+- primitive tasks: 
+    actionable thing that can be done Ex: FireWeaopn, Reload, MoveToX
+- compound tasks:
+    higher level tasks that can be solved by methods (chain of primitives)
+    
+
+• Add the root compound task to our decomposing list
+• For each task in our decomposing list
+  • Remove task
+  • If task is compound
+    − Find method in compound task that is satisfied by the current world state
+    − If a method is found, add method’s tasks to the decomposing list
+    − If not, restore planner to the state before the last decomposed task
+  • If task is primitive
+    − Apply task’s effects to the current world state
+    − Add task to the final plan list
