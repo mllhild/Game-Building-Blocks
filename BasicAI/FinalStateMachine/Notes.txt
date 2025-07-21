@@ -1,0 +1,33 @@
+class FiniteStateMachine
+{
+  void update();
+  list<FSMState> states;
+  FSMState* initialState;
+  FSMState* activeState;
+}
+
+class FSMState
+{
+  virtual void onEnter();
+  virtual void onUpdate();
+  virtual void onExit();
+  list<FSMTransition> transitions;
+};
+
+class FSMTransition
+{
+  virtual bool isValid();
+  virtual FSMState* getNextState();
+  virtual void onTransition();
+}
+
+
+Sequence 
+FiniteStateMachine update() 
+each tik calls isValid() on each transition in activeState.transtitions until
+isValid() returns true or there are no more transitions.
+• If a valid transition is found, then:
+• Call activeState.onExit()
+• Set activeState to validTransition.getNextState()
+• Call activeState.onEnter()
+• If a valid transition is not found, then call activeState.onUpdate()
