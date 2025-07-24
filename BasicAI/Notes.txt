@@ -1,0 +1,12 @@
+- Use Hierarchy to devide up descision making into reasonable sized pieces
+- not all AI has to be in the NPC, it can also be in the objects and events
+  - a bed broadcasts a rest option and contains the laying down animation
+  - a fire broadcasts that NPCs are supposed to run away from it
+  - a town tells the NPCs in it how they should behave and where they can go to
+- Use Option Stacks to enable the AI to respond to temporary situation or opportunity
+- Use Local and General Blackboards to save results of expensive querries (Blackboard = place to store data that can be accessed by several agents)
+- Uses of Blackboard
+  - target selection
+  - path finding
+  - state informations
+- Make your characters modular, with separate components for task areas (movement, animation, ai, dialog, audio, weapon)
